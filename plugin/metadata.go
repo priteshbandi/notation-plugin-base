@@ -12,6 +12,6 @@ type GetMetadataResponse struct {
 	Description               string       `json:"description"`
 	Version                   string       `json:"version"`
 	URL                       string       `json:"url"`
-	SupportedContractVersions []string     `json:"supportedContractVersions"`
+	SupportedContractVersions []string     `json:"supportedContractVersions,omitempty"`
 	Capabilities              []Capability `json:"capabilities"`
 }

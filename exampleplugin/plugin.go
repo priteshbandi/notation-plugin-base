@@ -1,4 +1,4 @@
-package sampleplugin
+package main
 
 import (
 	"context"
@@ -9,8 +9,8 @@ import (
 type DummyPlugin struct {
 }
 
-// NewSamplePlugin validate the metadata of the plugin and return a *CLIPlugin.
-func NewSamplePlugin() (*DummyPlugin, error) {
+// NewExamplePlugin validate the metadata of the plugin and return a *CLIPlugin.
+func NewExamplePlugin() (*DummyPlugin, error) {
 	return &DummyPlugin{}, nil
 }
 
