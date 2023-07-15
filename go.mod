@@ -1,4 +1,4 @@
-module github.com/notaryproject/notation-plugin-base
+module github.com/priteshbandi/notation-plugin-base
 
 go 1.20
 

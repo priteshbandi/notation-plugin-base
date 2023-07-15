@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/notaryproject/notation-plugin-base/cli"
-	"github.com/notaryproject/notation-plugin-base/dummyplugin"
+	"github.com/priteshbandi/notation-plugin-base/cli"
+	"github.com/priteshbandi/notation-plugin-base/sampleplugin"
 )
 
 func main() {
-	plg, _ := sampleplugin.NewDummyPlugin()
+	plg, _ := sampleplugin.NewSamplePlugin()
 	cli.NewHelper(plg).Execute()
 }

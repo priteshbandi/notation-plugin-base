@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/notaryproject/notation-plugin-base/errors"
-	"github.com/notaryproject/notation-plugin-base/internal/io"
-	"github.com/notaryproject/notation-plugin-base/plugin"
+	"github.com/priteshbandi/notation-plugin-base/errors"
+	"github.com/priteshbandi/notation-plugin-base/internal/io"
+	"github.com/priteshbandi/notation-plugin-base/plugin"
 	"github.com/spf13/cobra"
 )
 

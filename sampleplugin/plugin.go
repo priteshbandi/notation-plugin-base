@@ -3,7 +3,7 @@ package sampleplugin
 import (
 	"context"
 
-	"github.com/notaryproject/notation-plugin-base/plugin"
+	"github.com/priteshbandi/notation-plugin-base/plugin"
 )
 
 type DummyPlugin struct {
