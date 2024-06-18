@@ -1,0 +1,17 @@
+- name: setup Notation CLI
+  if: steps.changed-files-specific.outputs.any_changed == 'true'
+  uses: notaryproject/notation-action/setup@v1
+  with:
+    version: 1.0.0
+
+- name: sign releasd artifact with signing plugin
+  uses: notaryproject/notation-action/sign@v1
+  with:
+    plugin_name: com.amazonaws.signer.notation.plugin
+    plugin_url: https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aws-signer-plugin.zip
+    plugin_checksum: cccfe8fdcdf853d83fd57ffc80524eddda75ad7ae9d9a257b087007230ec02f9
+    key_id: arn:aws:signer:region:xxxxxxxxx:/signing-profiles/ecr_signing_profile
+    target_artifact_reference: 111122223333.dkr.ecr.Region.amazonaws.com/curl@sha256:ca78e5f730f9a789ef8c63bb55275ac12dfb9e8099e6EXAMPLE
+    signature_format: cose
+    plugin_config: |-
+      self_signed=true
