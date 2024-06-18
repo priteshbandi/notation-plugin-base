@@ -20,8 +20,10 @@ jobs:
           notation cert generate-test "e2e-test"
       # E2E test cases on Notation Sign
       - name: Sign artifact using notation plugin
-        uses: ./sign
+        uses: notaryproject/notation-action/sign@v1
         with:
-          plugin_name: 'com.amazonaws.signer.notation.plugin'
-          plugin_url: 'https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aws-signer-plugin.zip'
+          plugin_name: com.amazonaws.signer.notation.plugin
+          plugin_url: https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aws-signer-plugin.zip
           plugin_checksum: cccfe8fdcdf853d83fd57ffc80524eddda75ad7ae9d9a257b087007230ec02f9
+          key_id: 'arn:aws:signer:us-west-2:273534936943:/signing-profiles/xaccount'
+          target_artifact_reference: 951584113157.dkr.starport.us-west-2.amazonaws.com/go-http-server:latest
