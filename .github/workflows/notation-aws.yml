@@ -1,4 +1,28 @@
-- name: setup Notation CLI
-  uses: notaryproject/notation-action/setup@v1
-  with:
-    version: 1.1.0
+
+name: e2e-test-sign
+
+on:
+  push:
+
+jobs:
+  e2e-test-sign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Setting up Notation CLI on the runner
+      - name: Setup Notation
+        uses: ./setup
+      
+      # Generate test
+      - name: Notation generate-test
+        run: |
+          notation cert generate-test "e2e-test"
+      # E2E test cases on Notation Sign
+      - name: Sign artifact using notation plugin
+        uses: ./sign
+        with:
+          plugin_name: 'com.amazonaws.signer.notation.plugin'
+          plugin_url: 'https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aws-signer-plugin.zip'
+          plugin_checksum: cccfe8fdcdf853d83fd57ffc80524eddda75ad7ae9d9a257b087007230ec02f9
+          plugin_url: 'https://github.com/notaryproject/notation-action/raw/e2e-test-plugin/tests/plugin_binaries/notation-e2e-test-plugin_0.1.0_linux_amd64.tar.gz'
