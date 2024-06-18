@@ -25,4 +25,3 @@ jobs:
           plugin_name: 'com.amazonaws.signer.notation.plugin'
           plugin_url: 'https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aws-signer-plugin.zip'
           plugin_checksum: cccfe8fdcdf853d83fd57ffc80524eddda75ad7ae9d9a257b087007230ec02f9
-          plugin_url: 'https://github.com/notaryproject/notation-action/raw/e2e-test-plugin/tests/plugin_binaries/notation-e2e-test-plugin_0.1.0_linux_amd64.tar.gz'
